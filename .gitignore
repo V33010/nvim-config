@@ -1,0 +1,164 @@
+
+
+# ==========================================
+# Neovim - Temporary & Runtime Files
+# ==========================================
+
+# Swap files
+*.swp
+*.swo
+*.swn
+*.swx
+
+# Backup files
+*.bak
+*.orig
+*.old
+*~
+
+# Undo files
+*.un~
+
+# Temporary files
+*.tmp
+*.temp
+*.temp.*
+
+# Neovim-generated files
+.netrwhist
+shada/
+shada-*
+*.shada
+*.shada.tmp
+
+# ==========================================
+# Sessions
+# ==========================================
+
+Session.vim
+Sessionx.vim
+*.session
+
+# ==========================================
+# Plugin-generated files
+# ==========================================
+
+# Plugin directories (only if accidentally created here)
+plugin/after/
+pack/
+
+# Plugin build artifacts
+*.so
+*.dll
+*.dylib
+
+# ==========================================
+# LSP / Language Servers / Tooling
+# ==========================================
+
+# Language server caches
+.lsp/
+.lspcache/
+
+# Mason local data (if configured inside repo)
+.mason/
+mason/
+
+# ==========================================
+# Debugging
+# ==========================================
+
+# DAP logs
+dap.log
+debug.log
+*.trace
+
+# ==========================================
+# Logs
+# ==========================================
+
+*.log
+log/
+logs/
+
+# ==========================================
+# Coverage / Test Artifacts
+# ==========================================
+
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# ==========================================
+# Python
+# ==========================================
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ==========================================
+# Node / JavaScript
+# ==========================================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==========================================
+# Operating System Files
+# ==========================================
+
+# Linux
+.directory
+.Trash-*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# ==========================================
+# Editors / IDEs
+# ==========================================
+
+.idea/
+.vscode/
+*.code-workspace
+
+# ==========================================
+# Local Environment / Secrets
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+# Local machine-specific configuration
+local.lua
+local/
+private.lua
+secrets.lua
+
+# ==========================================
+# Miscellaneous
+# ==========================================
+
+*.cache
+.cache/
+.cache-*/
