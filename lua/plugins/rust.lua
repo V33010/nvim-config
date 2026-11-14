@@ -1,0 +1,104 @@
+return {}
+-- return {
+--     -- Mason tool management: ensure codelldb is available for debugging
+--     {
+--         "williamboman/mason.nvim",
+--         opts = function(_, opts)
+--             opts.ensure_installed = opts.ensure_installed or {}
+--             vim.list_extend(opts.ensure_installed, { "codelldb" })
+--         end,
+--     },
+--
+--     -- Rustaceanvim provides full rust-analyzer integration
+--     {
+--         "mrcjkb/rustaceanvim",
+--         version = "^5",
+--         lazy = false,
+--         ft = { "rust" },
+--         opts = {
+--             server = {
+--                 on_attach = function(client, bufnr)
+--                     -- Keymaps for Rust-specific actions
+--                     vim.keymap.set("n", "<leader>ca", function()
+--                         vim.cmd.RustLsp("codeAction")
+--                     end, { buffer = bufnr, desc = "Rust Code Action" })
+--
+--                     vim.keymap.set("n", "K", function()
+--                         vim.cmd.RustLsp({ "hover", "actions" })
+--                     end, { buffer = bufnr, desc = "Rust Hover Actions" })
+--
+--                     vim.keymap.set("n", "<leader>dr", function()
+--                         vim.cmd.RustLsp("debuggables")
+--                     end, { buffer = bufnr, desc = "Rust Debuggables" })
+--                 end,
+--                 default_settings = {
+--                     ["rust-analyzer"] = {
+--                         cargo = {
+--                             allFeatures = true,
+--                             loadOutDirsFromCheck = true,
+--                             buildScripts = {
+--                                 enable = true,
+--                             },
+--                         },
+--                         checkOnSave = true,
+--                         check = {
+--                             command = "clippy",
+--                             extraArgs = { "--no-deps" },
+--                         },
+--                         procMacro = {
+--                             enable = true,
+--                             ignored = {
+--                                 ["async-trait"] = { "async_trait" },
+--                                 ["napi-derive"] = { "napi" },
+--                                 ["async-recursion"] = { "async_recursion" },
+--                             },
+--                         },
+--                         inlayHints = {
+--                             bindingModeHints = { enable = false },
+--                             chainingHints = { enable = true },
+--                             closingBraceHints = { enable = true },
+--                             closureReturnTypeHints = { enable = "always" },
+--                             lifetimeElisionHints = { enable = "always", useParameterNames = true },
+--                             typeHints = { enable = true },
+--                         },
+--                     },
+--                 },
+--             },
+--         },
+--         config = function(_, opts)
+--             vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
+--         end,
+--     },
+--
+--     -- Optional: Crates.io helper for Cargo.toml dependency versioning and completion
+--     {
+--         "saecki/crates.nvim",
+--         event = { "BufRead Cargo.toml" },
+--         opts = {
+--             completion = {
+--                 cmp = { enabled = true },
+--             },
+--         },
+--     },
+-- }
+-- return {
+-- 	-- This tells LazyVim to load the rust language extra
+-- 	{ import = "lazyvim.plugins.extras.lang.rust" },
+-- }
+
+-- Optional: Customizing rust-analyzer settings
+-- 	{
+-- 		"mrcjkb/rustaceanvim",
+-- 		opts = {
+-- 			server = {
+-- 				default_settings = {
+-- 					["rust-analyzer"] = {
+-- 						checkOnSave = {
+-- 							command = "clippy", -- Use clippy for better linting than standard 'check'
+-- 						},
+-- 					},
+-- 				},
+-- 			},
+-- 		},
+-- 	},
+-- }

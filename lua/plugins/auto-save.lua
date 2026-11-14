@@ -1,0 +1,37 @@
+return {}
+-- return {
+-- 	{
+-- 		"Pocco81/auto-save.nvim", -- Auto-save plugin
+-- 		event = "InsertLeave", -- Load plugin when leaving Insert mode
+-- 		opts = {
+-- 			enabled = true, -- Enable autosave
+-- 			execution_message = {
+-- 				message = function()
+-- 					return "Auto-saved at " .. vim.fn.strftime("%H:%M:%S")
+-- 				end,
+-- 				dim = 0.18, -- Dim the message
+-- 				cleaning_interval = 1500, -- Remove the message after 1.5 seconds
+-- 			},
+-- 			trigger_events = { "InsertLeave", "TextChanged" }, -- Events that trigger auto-save
+-- 			condition = function(buf)
+-- 				local fn = vim.fn
+-- 				local utils = require("auto-save.utils.data")
+-- 				return fn.getbufvar(buf, "&modifiable") == 1
+-- 					and utils.not_in(fn.getbufvar(buf, "&filetype"), { "gitcommit", "TelescopePrompt" })
+-- 			end,
+-- 			write_all_buffers = false, -- Save only the active buffer
+-- 			debounce_delay = 135, -- Wait time before saving in ms
+-- 			callbacks = {
+-- 				before_saving = function()
+-- 					-- Add custom actions before saving if needed
+-- 				end,
+-- 				after_saving = function()
+-- 					-- Add custom actions after saving if needed
+-- 				end,
+-- 			},
+-- 		},
+-- 		config = function(_, opts)
+-- 			require("auto-save").setup(opts)
+-- 		end,
+-- 	},
+-- }

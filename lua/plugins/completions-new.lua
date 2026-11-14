@@ -1,0 +1,75 @@
+return {}
+-- return {
+-- 	-- Autocompletion engine
+-- 	{
+-- 		"hrsh7th/nvim-cmp",
+-- 		dependencies = {
+-- 			"hrsh7th/cmp-nvim-lsp", -- LSP source
+-- 			"hrsh7th/cmp-buffer", -- Buffer source
+-- 			"hrsh7th/cmp-path", -- Path source
+-- 			"L3MON4D3/LuaSnip", -- Snippet engine
+-- 			"saadparwaiz1/cmp_luasnip", -- Snippet integration
+-- 		},
+-- 		config = function()
+-- 			local cmp = require("cmp")
+-- 			local luasnip = require("luasnip")
+--
+-- 			-- Load friendly snippets (optional, but useful)
+-- 			require("luasnip.loaders.from_vscode").lazy_load()
+--
+-- 			-- Custom snippet for Python "print"
+-- 			luasnip.add_snippets("python", {
+-- 				luasnip.snippet("print", {
+-- 					luasnip.text_node("print("),
+-- 					luasnip.insert_node(1),
+-- 					luasnip.text_node(")"),
+-- 				}),
+-- 			})
+--
+-- 			-- nvim-cmp setup
+-- 			cmp.setup({
+-- 				snippet = {
+-- 					expand = function(args)
+-- 						luasnip.lsp_expand(args.body) -- Snippet expansion
+-- 					end,
+-- 				},
+-- 				mapping = cmp.mapping.preset.insert({
+-- 					["<Tab>"] = cmp.mapping.select_next_item(),
+-- 					["<S-Tab>"] = cmp.mapping.select_prev_item(),
+-- 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+-- 				}),
+-- 				sources = cmp.config.sources({
+-- 					{ name = "luasnip" }, -- Prioritize snippets first
+-- 					{ name = "nvim_lsp" }, -- LSP source for completions
+-- 				}, {
+-- 					{ name = "buffer" },
+-- 				}),
+-- 			})
+-- 		end,
+-- 	},
+--
+-- 	-- LuaSnip (snippet engine)
+-- 	{
+-- 		"L3MON4D3/LuaSnip",
+-- 		config = function()
+-- 			-- Load snippets from friendly-snippets
+-- 			require("luasnip.loaders.from_vscode").lazy_load()
+-- 		end,
+-- 	},
+--
+-- 	-- Optional: Additional snippets collection
+-- 	{
+-- 		"rafamadriz/friendly-snippets",
+-- 	},
+--
+-- 	-- LSP Config for Python (Pyright)
+-- 	{
+-- 		"neovim/nvim-lspconfig",
+-- 		config = function()
+-- 			local lspconfig = require("lspconfig")
+--
+-- 			-- Pyright setup for Python
+-- 			lspconfig.pyright.setup({})
+-- 		end,
+-- 	},
+-- }
