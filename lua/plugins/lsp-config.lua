@@ -308,7 +308,7 @@ return {
         lazy = false,
         config = function()
             -- Capabilities for nvim-cmp completion
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local capabilities = require("blink.cmp").get_lsp_capabilities()
 
             -- Lua
             vim.lsp.config("lua_ls", {
@@ -334,7 +334,7 @@ return {
                     ["rust-analyzer"] = {
                         checkOnSave = true,
                         cargo = {
-                            allFeatures = true,
+                            allFeatures = false,
                         },
                         check = {
                             command = "clippy",
