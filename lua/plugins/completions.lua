@@ -81,9 +81,30 @@ return {
                         luasnip.lsp_expand(args.body)
                     end,
                 },
+                -- window = {
+                --     completion = cmp.config.window.bordered(),
+                --     documentation = cmp.config.window.bordered(),
+                -- },
+                --
                 window = {
                     completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    documentation = vim.tbl_extend("force", cmp.config.window.bordered(), {
+                        max_width = 50,
+                        max_height = 20,
+                    }),
+                },
+                formatting = {
+                    format = function(_, vim_item)
+                        local max_abbr = 28
+                        local max_menu = 24
+                        if vim.fn.strchars(vim_item.abbr) > max_abbr then
+                            vim_item.abbr = vim.fn.strcharpart(vim_item.abbr, 0, max_abbr - 1) .. "…"
+                        end
+                        if vim_item.menu and vim.fn.strchars(vim_item.menu) > max_menu then
+                            vim_item.menu = vim.fn.strcharpart(vim_item.menu, 0, max_menu - 1) .. "…"
+                        end
+                        return vim_item
+                    end,
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
